@@ -20,7 +20,7 @@ public partial class ListaAdministrador : ContentPage
     {
 		try
 		{
-			
+			lista.Clear();  //limpa a obsrvable collection e recarrega a lista
 
 			List<Administrador> tmp = await App.Db.GetAll();
 			tmp.ForEach(i => lista.Add(i));
