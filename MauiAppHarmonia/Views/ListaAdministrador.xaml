@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHarmonia.Views.ListaAdministrador"
+             Title="Administrador">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Cadastrar" Clicked="ToolbarItem_Clicked"  />
+    </ContentPage.ToolbarItems>
+    
+    
+    <VerticalStackLayout>
+        <SearchBar x:Name="txt_search"
+                   Placeholder="Busca de Administradores"
+                   TextChanged="txt_search_TextChanged" />
+      
+        <ListView x:Name="lst_administradores" ItemSelected="lst_administradores_ItemSelected">
+            <ListView.Header>
+                <Grid ColumnDefinitions="*, *, *, *, *, *" >
+                    <Label Grid.Column="0" Text="Código administrador" />
+                    <Label Grid.Column="1" Text="Nome" />
+                    <Label Grid.Column="2" Text="Matrícula" />
+                    <Label Grid.Column="3" Text="Salário" />
+                    <Label Grid.Column="4" Text="Login" />
+                    <Label Grid.Column="5" Text="Senha" />
+
+                </Grid>
+            </ListView.Header>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Remover" Clicked="MenuItem_Clicked" />
+                        </ViewCell.ContextActions>
+
+                        <Grid ColumnDefinitions="*, *, *, *, *, *">
+                            <Label Grid.Column="0" Text="{Binding codigoAdmin}" />
+                            <Label Grid.Column="1" Text="{Binding Nome}" />
+                            <Label Grid.Column="2" Text="{Binding Matricula}" />
+                            <Label Grid.Column="3" Text="{Binding Salario}" />
+                            <Label Grid.Column="4" Text="{Binding Login}" />
+                            <Label Grid.Column="5" Text="{Binding Senha}" />
+
+                        </Grid>
+
+                    </ViewCell>
+                    
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            
+        </ListView>
+
+    </VerticalStackLayout>
+</ContentPage>

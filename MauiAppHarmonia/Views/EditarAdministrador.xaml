@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHarmonia.Views.EditarAdministrador"
+             Title="{Binding Nome}">
+
+        <ContentPage.ToolbarItems>
+            <ToolbarItem Text="Salvar" Clicked="ToolbarItem_Clicked"  />
+        </ContentPage.ToolbarItems>
+
+        <VerticalStackLayout Spacing="10" Padding="10" >
+
+            <Label Text="Código do administrador:" />
+            <Entry x:Name="txt_codigoAdmin" Text="{Binding codigoAdmin}"  Keyboard="Numeric" />
+
+            <Label Text="Nome do administrador:" />
+            <Entry x:Name="txt_nome" Text="{Binding Nome}" />
+
+            <Label Text="Matrícula: "/>
+            <Entry x:Name="txt_matricula" Text="{Binding Matricula}" />
+
+            <Label Text="Salário:" />
+            <Entry x:Name="txt_salario" Text="{Binding Salario}" Keyboard="Numeric" />
+
+            <Label Text="Login: "/>
+            <Entry x:Name="txt_login" Text="{Binding Login}"/>
+
+            <Label Text="Senha:" />
+            <Entry x:Name="txt_senha" Text="{Binding Senha}" Keyboard="Numeric" />
+
+        </VerticalStackLayout>
+
+
+</ContentPage>
