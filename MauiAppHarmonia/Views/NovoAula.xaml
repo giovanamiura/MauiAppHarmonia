@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHarmonia.Views.NovaAula"
+             Title="Nova Aula">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Salvar" Clicked="ToolbarItem_Clicked_SalvarAula" />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10">
+
+            <Label Text="Professor:" FontAttributes="Bold"/>
+            <Picker x:Name="pickerProfessor" Title="Selecione o Professor" 
+                    ItemDisplayBinding="{Binding NomeProfessorParaDisplay}"/>
+
+            <Label Text="Curso:" FontAttributes="Bold"/>
+            <Picker x:Name="pickerCurso" Title="Selecione o Curso"
+                    ItemDisplayBinding="{Binding NomeCurso}"/>
+
+            <Label Text="Data da Aula:" />
+            <DatePicker x:Name="datePickerDataAula" Format="dd/MM/yyyy" />
+
+            <Label Text="Hora de Início:" />
+            <TimePicker x:Name="timePickerHoraInicio" Format="HH:mm" />
+
+            <Label Text="Hora de Fim:" />
+            <TimePicker x:Name="timePickerHoraFim" Format="HH:mm" />
+
+            <Label Text="Observações (opcional):" />
+            <Editor x:Name="editorObservacoes" Placeholder="Detalhes sobre a aula" HeightRequest="100" AutoSize="TextChanges"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

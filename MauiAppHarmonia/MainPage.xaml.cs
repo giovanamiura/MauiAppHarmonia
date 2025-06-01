@@ -1,25 +1,42 @@
-﻿namespace MauiAppHarmonia
+﻿using MauiAppHarmonia.Views;
+
+namespace MauiAppHarmonia;
+
+public partial class MainPage : ContentPage
 {
-    public partial class MainPage : ContentPage
+    public MainPage()
     {
-        int count = 0;
-
-        public MainPage()
-        {
-            InitializeComponent();
-        }
-
-        private void OnCounterClicked(object sender, EventArgs e)
-        {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
-        }
+        InitializeComponent();
     }
 
+    private async void OnPessoaClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new NovoPessoa());
+    }
+    private async void OnAdministradorClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new NovoAdministrador());
+    }
+
+    private async void OnProfessorClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new NovoProfessor());
+    }
+
+    private async void OnAlunoClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new NovoAluno());
+    }
+    private async void OnCursoClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new NovoCurso());
+    }
+    private async void OnInstrumentoClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new NovoInstrumento());
+    }
+    private async void OnAulaClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new NovaAula());
+    }
 }

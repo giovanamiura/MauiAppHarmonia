@@ -8,25 +8,23 @@
         <ToolbarItem Text="Salvar" Clicked="ToolbarItem_Clicked"  />
     </ContentPage.ToolbarItems>
 
-    <VerticalStackLayout Spacing="10" Padding="10" >
+    <VerticalStackLayout Padding="10" Spacing="10">
 
-        <Label Text="Código do administrador:" />
-        <Entry x:Name="txt_codigo" Keyboard="Numeric" />
+        <Label Text="Pessoa associada:" />
+        <Picker x:Name="pickerPessoa" ItemDisplayBinding="{Binding Nome}" />
 
-        <Label Text="Nome do administrador:" />
-        <Entry x:Name="txt_nome" />
-
-        <Label Text="Matrícula: "/>
+        <Label Text="Matrícula:" />
         <Entry x:Name="txt_matricula" />
+
+        <Label Text="Login:" />
+        <Entry x:Name="txt_login" />
+
+        <Label Text="Senha:" />
+        <Entry x:Name="txt_senha" IsPassword="True" />
 
         <Label Text="Salário:" />
         <Entry x:Name="txt_salario" Keyboard="Numeric" />
 
-        <Label Text="Login: "/>
-        <Entry x:Name="txt_login"/>
-
-        <Label Text="Senha:" />
-        <Entry x:Name="txt_senha" Keyboard="Numeric" />
-
     </VerticalStackLayout>
+
 </ContentPage>

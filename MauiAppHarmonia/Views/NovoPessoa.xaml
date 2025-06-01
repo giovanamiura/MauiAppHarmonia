@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHarmonia.Views.NovoPessoa"
+             Title="Cadastro de Pessoa">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Salvar" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Padding="20">
+
+            <Label Text="Nome:" />
+            <Entry x:Name="txt_nome" />
+
+            <Label Text="Data de Nascimento:" />
+            <DatePicker x:Name="dp_dataNascimento" />
+
+            <Label Text="Rua:" />
+            <Entry x:Name="txt_rua" />
+
+            <Label Text="Número:" />
+            <Entry x:Name="txt_numero" Keyboard="Numeric" />
+
+            <Label Text="Bairro:" />
+            <Entry x:Name="txt_bairro" />
+
+            <Label Text="CEP:" />
+            <Entry x:Name="txt_cep" Keyboard="Numeric" />
+
+            <Label Text="Cidade:" />
+            <Entry x:Name="txt_cidade" />
+
+            <Label Text="Estado (UF):" />
+            <Entry x:Name="txt_estado" MaxLength="2" />
+
+            <Label Text="RG:" />
+            <Entry x:Name="txt_rg" />
+
+            <Label Text="Número do Celular:" />
+            <Entry x:Name="txt_celularNumero" Keyboard="Telephone" />
+
+            <Label Text="CPF:" />
+            <Entry x:Name="txt_cpf" Keyboard="Numeric" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

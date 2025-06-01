@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHarmonia.Views.NovoProfessor"
+             Title="Novo Professor">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Salvar" Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="10" Spacing="10">
+
+            <Label Text="Pessoa associada (base do cadastro):" FontAttributes="Bold" />
+            <Picker x:Name="pickerPessoa" ItemDisplayBinding="{Binding Nome}" />
+
+            <Label Text="Login:" />
+            <Entry x:Name="txt_login" />
+
+            <Label Text="Senha:" />
+            <Entry x:Name="txt_senha" IsPassword="True" />
+
+            <Label Text="Salário:" />
+            <Entry x:Name="txt_salario" Keyboard="Numeric" />
+
+            <Label Text="Número de Aulas:" />
+            <Entry x:Name="txt_numero_aulas" Keyboard="Numeric" />
+
+            <Label Text="Curso:" FontAttributes="Bold" />
+            <Picker x:Name="pickerCurso" Title="Selecione um curso" ItemDisplayBinding="{Binding NomeCurso}" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

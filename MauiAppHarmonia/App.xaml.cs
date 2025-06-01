@@ -29,7 +29,7 @@ namespace MauiAppHarmonia
             InitializeComponent();
 
             //MainPage = new AppShell();
-            MainPage = new NavigationPage( new Views.ListaAdministrador());  // troca de página
+            MainPage = new NavigationPage(new MainPage());  // troca de página
         }
     }
 }

@@ -11,7 +11,7 @@ namespace MauiAppHarmonia.Models
         string _senha;
         double _salario;
 
-        [PrimaryKey]
+        [PrimaryKey, AutoIncrement]
 
         public int codigoAdmin { get; set; }
         public string Nome

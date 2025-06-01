@@ -2,38 +2,51 @@ using MauiAppHarmonia.Models;
 
 namespace MauiAppHarmonia.Views;
 
-public partial class NovoAdministrador : ContentPage
-{
-	public NovoAdministrador()
-	{
-		InitializeComponent();
-	}
-
-    private async void ToolbarItem_Clicked(object sender, EventArgs e)
+    public partial class NovoAdministrador : ContentPage
     {
-		try
-		{
-			Administrador a = new Administrador
-			{
-				codigoAdmin = Convert.ToInt32(txt_codigo.Text),
-				Nome = txt_nome.Text,
-				Matricula = txt_matricula.Text,
-				Salario = Convert.ToDouble(txt_salario.Text),
-				Login = txt_login.Text,
-				Senha = txt_senha.Text
+        List<Pessoa> pessoas;
 
-			};
+        public NovoAdministrador()
+        {
+            InitializeComponent();
+            CarregarPessoas();
+        }
 
-			await App.Db.Insert(a);
-			await DisplayAlert("Sucesso!", "Registro inserido", "OK");
+        private async void CarregarPessoas()
+        {
+        pessoas = await App.Db.GetAllPessoas();
+        pickerPessoa.ItemsSource = pessoas;
+        }
 
+        private async void ToolbarItem_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                if (pickerPessoa.SelectedItem == null)
+                {
+                    await DisplayAlert("Erro", "Selecione uma pessoa", "OK");
+                    return;
+                }
 
+                var pessoaSelecionada = (Pessoa)pickerPessoa.SelectedItem;
 
+                var admin = new Administrador
+                {
+                    codigoPessoa = pessoaSelecionada.codigoPessoa,
+                    Matricula = txt_matricula.Text,
+                    Login = txt_login.Text,
+                    Senha = txt_senha.Text,
+                    Salario = double.Parse(txt_salario.Text)
+                };
 
-		}
-		catch (Exception ex)
-		{
-			await DisplayAlert("Ops", ex.Message, "OK");
+                await App.Db.Insert(admin);
+
+                await DisplayAlert("Sucesso", "Administrador cadastrado com sucesso!", "OK");
+                await Navigation.PopAsync();
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Erro", ex.Message, "OK");
+            }
         }
     }
-}

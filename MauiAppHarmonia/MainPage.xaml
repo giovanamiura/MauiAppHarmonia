@@ -1,36 +1,49 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiAppHarmonia.MainPage">
+             x:Class="MauiAppHarmonia.MainPage"
+             Title="Tela Inicial">
 
-    <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
-            <Image
-                Source="dotnet_bot.png"
-                HeightRequest="185"
-                Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a race car number eight" />
+    <VerticalStackLayout Padding="20" Spacing="20" VerticalOptions="Center">
 
-            <Label
-                Text="Hello, World!"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
+        <Label Text="Bem-vindo ao Sistema Harmonia"
+               FontSize="24"
+               HorizontalOptions="Center" />
 
-            <Label
-                Text="Welcome to &#10;.NET Multi-platform App UI"
-                Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+        <Button Text="Cadastro de Pessoa"
+                Clicked="OnPessoaClicked"
+                BackgroundColor="Gray"
+                TextColor="Black" />
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me" 
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Fill" />
-        </VerticalStackLayout>
-    </ScrollView>
+        <Button Text="Cadastro de Curso"
+                Clicked="OnCursoClicked"
+                BackgroundColor="Gray"
+                TextColor="Black" />
 
+        <Button Text="Cadastro de Aula"
+                Clicked="OnAulaClicked"
+                BackgroundColor="Gray"
+                TextColor="Black" />
+
+        <Button Text="Cadastro de Instrumento"
+                Clicked="OnInstrumentoClicked"
+                BackgroundColor="Gray"
+                TextColor="Black" />
+
+        <Button Text="Cadastro de Administrador"
+                Clicked="OnAdministradorClicked"
+                BackgroundColor="Gray"
+                TextColor="Black" />
+
+        <Button Text="Cadastro de Professor"
+                Clicked="OnProfessorClicked"
+                BackgroundColor="Gray"
+                TextColor="Black" />
+
+        <Button Text="Cadastro de Aluno"
+                Clicked="OnAlunoClicked"
+                BackgroundColor="Gray"
+                TextColor="Black"/>
+
+    </VerticalStackLayout>
 </ContentPage>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHarmonia.Views.NovoInstrumento"
+             Title="Novo Instrumento">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Salvar" Clicked="ToolbarItem_Clicked_SalvarInstrumento" />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10">
+            <Label Text="Nome do Instrumento:" />
+            <Entry x:Name="txtNomeInstrumento" Placeholder="Ex: Violão Clássico Eagle EA-100" />
+
+            <Label Text="Quantidade em Estoque:" />
+            <Entry x:Name="txtQuantidade" Keyboard="Numeric" Placeholder="Ex: 5" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
