@@ -2,13 +2,15 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppHarmonia.MainPage"
+             BackgroundColor="Black"
              Title="Tela Inicial">
 
-    <VerticalStackLayout Padding="20" Spacing="20" VerticalOptions="Center">
+    <VerticalStackLayout Padding="20" Spacing="20" VerticalOptions="Center" BackgroundColor="Black">
 
         <Label Text="Bem-vindo ao Sistema Harmonia"
                FontSize="24"
-               HorizontalOptions="Center" />
+               HorizontalOptions="Center" 
+               TextColor="AntiqueWhite"/>
 
         <Button Text="Cadastro de Pessoa"
                 Clicked="OnPessoaClicked"
